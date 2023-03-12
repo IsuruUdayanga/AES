@@ -40,6 +40,9 @@
             this.gbEncryption = new System.Windows.Forms.GroupBox();
             this.rbDecrypt = new System.Windows.Forms.RadioButton();
             this.rbEncrypt = new System.Windows.Forms.RadioButton();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.gbSetup = new System.Windows.Forms.GroupBox();
             this.gbFileSelection = new System.Windows.Forms.GroupBox();
             this.txtFileName = new System.Windows.Forms.TextBox();
@@ -57,12 +60,9 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCreate = new System.Windows.Forms.Label();
-            this.FileSelector = new System.Windows.Forms.OpenFileDialog();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.FileSelector = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
@@ -201,6 +201,52 @@
             this.rbEncrypt.UseVisualStyleBackColor = true;
             this.rbEncrypt.CheckedChanged += new System.EventHandler(this.rbEncrypt_CheckedChanged);
             // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.BackColor = System.Drawing.Color.White;
+            this.btnDecrypt.Enabled = false;
+            this.btnDecrypt.FlatAppearance.BorderSize = 0;
+            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrypt.ForeColor = System.Drawing.Color.White;
+            this.btnDecrypt.ImageIndex = 2;
+            this.btnDecrypt.ImageList = this.imageList;
+            this.btnDecrypt.Location = new System.Drawing.Point(295, 21);
+            this.btnDecrypt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(36, 31);
+            this.btnDecrypt.TabIndex = 5;
+            this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "correct.png");
+            this.imageList.Images.SetKeyName(1, "lock.png");
+            this.imageList.Images.SetKeyName(2, "unlock.png");
+            this.imageList.Images.SetKeyName(3, "about.png");
+            this.imageList.Images.SetKeyName(4, "reset.png");
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.BackColor = System.Drawing.Color.White;
+            this.btnEncrypt.Enabled = false;
+            this.btnEncrypt.FlatAppearance.BorderSize = 0;
+            this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncrypt.ForeColor = System.Drawing.Color.White;
+            this.btnEncrypt.ImageIndex = 1;
+            this.btnEncrypt.ImageList = this.imageList;
+            this.btnEncrypt.Location = new System.Drawing.Point(295, 55);
+            this.btnEncrypt.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(36, 31);
+            this.btnEncrypt.TabIndex = 5;
+            this.btnEncrypt.UseVisualStyleBackColor = false;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
             // gbSetup
             // 
             this.gbSetup.Controls.Add(this.txtMasterKey);
@@ -276,12 +322,11 @@
             // 
             // lblSize
             // 
-            this.lblSize.AutoSize = true;
             this.lblSize.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSize.Location = new System.Drawing.Point(100, 184);
             this.lblSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(90, 19);
+            this.lblSize.Size = new System.Drawing.Size(230, 19);
             this.lblSize.TabIndex = 0;
             this.lblSize.Text = "Not Found";
             // 
@@ -298,12 +343,11 @@
             // 
             // lblReadOnly
             // 
-            this.lblReadOnly.AutoSize = true;
             this.lblReadOnly.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReadOnly.Location = new System.Drawing.Point(127, 163);
             this.lblReadOnly.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReadOnly.Name = "lblReadOnly";
-            this.lblReadOnly.Size = new System.Drawing.Size(90, 19);
+            this.lblReadOnly.Size = new System.Drawing.Size(203, 19);
             this.lblReadOnly.TabIndex = 0;
             this.lblReadOnly.Text = "Not Found";
             // 
@@ -320,12 +364,11 @@
             // 
             // lblLastWrite
             // 
-            this.lblLastWrite.AutoSize = true;
             this.lblLastWrite.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastWrite.Location = new System.Drawing.Point(103, 142);
             this.lblLastWrite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastWrite.Name = "lblLastWrite";
-            this.lblLastWrite.Size = new System.Drawing.Size(90, 19);
+            this.lblLastWrite.Size = new System.Drawing.Size(227, 19);
             this.lblLastWrite.TabIndex = 0;
             this.lblLastWrite.Text = "Not Found";
             // 
@@ -342,12 +385,11 @@
             // 
             // lblLastAccess
             // 
-            this.lblLastAccess.AutoSize = true;
             this.lblLastAccess.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastAccess.Location = new System.Drawing.Point(113, 121);
             this.lblLastAccess.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastAccess.Name = "lblLastAccess";
-            this.lblLastAccess.Size = new System.Drawing.Size(90, 19);
+            this.lblLastAccess.Size = new System.Drawing.Size(217, 19);
             this.lblLastAccess.TabIndex = 0;
             this.lblLastAccess.Text = "Not Found";
             // 
@@ -364,12 +406,11 @@
             // 
             // lblExtension
             // 
-            this.lblExtension.AutoSize = true;
             this.lblExtension.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExtension.Location = new System.Drawing.Point(103, 79);
             this.lblExtension.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExtension.Name = "lblExtension";
-            this.lblExtension.Size = new System.Drawing.Size(90, 19);
+            this.lblExtension.Size = new System.Drawing.Size(227, 19);
             this.lblExtension.TabIndex = 0;
             this.lblExtension.Text = "Not Found";
             // 
@@ -386,12 +427,11 @@
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(86, 58);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(90, 19);
+            this.lblName.Size = new System.Drawing.Size(244, 19);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Not Found";
             // 
@@ -408,65 +448,13 @@
             // 
             // lblCreate
             // 
-            this.lblCreate.AutoSize = true;
             this.lblCreate.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreate.Location = new System.Drawing.Point(86, 100);
             this.lblCreate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreate.Name = "lblCreate";
-            this.lblCreate.Size = new System.Drawing.Size(90, 19);
+            this.lblCreate.Size = new System.Drawing.Size(244, 19);
             this.lblCreate.TabIndex = 0;
             this.lblCreate.Text = "Not Found";
-            // 
-            // FileSelector
-            // 
-            this.FileSelector.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-            this.FileSelector.Title = "AES  - File Selection";
-            // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "correct.png");
-            this.imageList.Images.SetKeyName(1, "lock.png");
-            this.imageList.Images.SetKeyName(2, "unlock.png");
-            this.imageList.Images.SetKeyName(3, "about.png");
-            this.imageList.Images.SetKeyName(4, "reset.png");
-            // 
-            // btnDecrypt
-            // 
-            this.btnDecrypt.BackColor = System.Drawing.Color.White;
-            this.btnDecrypt.Enabled = false;
-            this.btnDecrypt.FlatAppearance.BorderSize = 0;
-            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecrypt.ForeColor = System.Drawing.Color.White;
-            this.btnDecrypt.ImageIndex = 2;
-            this.btnDecrypt.ImageList = this.imageList;
-            this.btnDecrypt.Location = new System.Drawing.Point(295, 21);
-            this.btnDecrypt.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(36, 31);
-            this.btnDecrypt.TabIndex = 5;
-            this.btnDecrypt.UseVisualStyleBackColor = false;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-            // 
-            // btnEncrypt
-            // 
-            this.btnEncrypt.BackColor = System.Drawing.Color.White;
-            this.btnEncrypt.Enabled = false;
-            this.btnEncrypt.FlatAppearance.BorderSize = 0;
-            this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncrypt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncrypt.ForeColor = System.Drawing.Color.White;
-            this.btnEncrypt.ImageIndex = 1;
-            this.btnEncrypt.ImageList = this.imageList;
-            this.btnEncrypt.Location = new System.Drawing.Point(295, 55);
-            this.btnEncrypt.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(36, 31);
-            this.btnEncrypt.TabIndex = 5;
-            this.btnEncrypt.UseVisualStyleBackColor = false;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // btnSelect
             // 
@@ -485,6 +473,11 @@
             this.toolTip.SetToolTip(this.btnSelect, "Select your file");
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // FileSelector
+            // 
+            this.FileSelector.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            this.FileSelector.Title = "AES  - File Selection";
             // 
             // btnAbout
             // 
@@ -547,7 +540,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(401, 534);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(401, 534);
             this.Name = "AES";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AES Encryptor";

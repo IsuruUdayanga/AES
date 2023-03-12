@@ -153,7 +153,7 @@ namespace AES
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("This process going to completely encrypt your file after that you won't be able to read or open this file. Do not lose your Master Key or forget about Hash algorithm that used. Without the key or hash algorithm you won't be able to decrypt the file. Think twice before encrypting the file.", "WARNING!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if(MessageBox.Show("This process going to completely encrypt your file after that you won't be able to read or open this file. Do not lose your Master Key or forget about Hash algorithm that used. Without the key or hash algorithm you won't be able to decrypt the file. Think twice before encrypting the file. \nClick \"OK\" to continue.\nClick \"Cancel\" to abort.", "WARNING!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
                 try
                 {
@@ -217,7 +217,7 @@ namespace AES
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Make sure your file is encrypted using this software because different software uses different encryptions. You might not be able to decrypt the file that is encrypted using another software. Also decrypting files that are not encrypted could lead to file crashes", "WARNING!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            if (MessageBox.Show("Make sure your file is encrypted using this software because different software uses different encryptions. You might not be able to decrypt the file that is encrypted using another software. Also decrypting files that are not encrypted could lead to file crashes. \nClick \"OK\" to continue.\nClick \"Cancel\" to abort.", "WARNING!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
                 try
                 {
